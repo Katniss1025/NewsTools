@@ -1,0 +1,70 @@
++---------------------+
+|      EmailConfig    |
++---------------------+
+| - host: str         |
+| - port: int         |
+| - user: str         |
+| - password: str     |
+| - to_email: str     |
++---------------------+
+
++---------------------+
+|      DataConfig     |
++---------------------+
+| - gw_target_columns |
+| - gn_target_columns |
+| - source_type_map   |
+| - category_map      |
++---------------------+
+
++---------------------+
+|    EmailProcessor   |
++---------------------+
+| - mail              |
+| - email_config      |
+| - data_config       |
++---------------------+
+| + login()           |
+| + select_inbox()    |
+| + search_emails()   |
+| + process_email()   |
+| + transform_table_columns() |
+| + mark_email_as_read() |
++---------------------+
+
++---------------------+
+|     FeishuConfig    |
++---------------------+
+| - APP_ID            |
+| - APP_SECRET        |
+| - APP_TOKEN         |
+| - GW_TABLE_ID       |
+| - GN_TABLE_ID       |
++---------------------+
+
++---------------------+
+|     FeishuFields    |
++---------------------+
+| - NEWS_TITLE        |
+| - NEWS_CONTENT      |
+| - NEWS_SOURCE       |
+| - NEWS_CATEGORY     |
+| - REVIEWER_TEXT     |
++---------------------+
+
++---------------------+
+|   FeishuDataSaver   |
++---------------------+
+| - client            |
++---------------------+
+| + save_data()       |
+| - _validate_data()  |
+| - _build_records()  |
+| - _build_request()  |
++---------------------+
+
++---------------------+
+|     process_news    |
++---------------------+
+| - main()            |
++---------------------+

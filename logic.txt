@@ -1,0 +1,17 @@
+开始 --> 初始化配置和处理器
+      --> EmailProcessor.login()
+      --> EmailProcessor.select_inbox()
+      --> EmailProcessor.search_emails()
+      --> 遍历未读邮件
+          --> EmailProcessor.process_email()
+              --> 解析邮件内容和附件
+              --> 遍历邮件中的表格
+                  --> EmailProcessor.transform_table_columns()
+                  --> 转换为飞书数据格式
+                  --> FeishuDataSaver.save_data()
+                      --> 根据数据类型选择表格ID
+                      --> 保存到飞书多维表格
+                  --> 标记邮件为已读
+      --> 所有邮件处理完成
+      --> send_feishu_webhook_notification()
+      --> 结束
